@@ -1,62 +1,54 @@
 <template>
-  <div class="hamburger-menu">
+  <div
+    class="hamburger-menu"
+  >
     <input
       id="menu__toggle"
-      type="checkbox">
+      ref="closer"
+      type="checkbox"
+    >
     <label
       class="menu__btn"
       for="menu__toggle">
       <span/>
     </label>
     <ul class="menu__box">
-      <li>
+      <li
+        v-for="item in items"
+        :key="item"
+        @click="clickCloser"
+      >
         <nuxt-link
+          :to="`/${item.toLowerCase()}`"
           class="menu__item"
-          to="/about"
-        >About
-        </nuxt-link>
-      </li>
-      <li>
-        <nuxt-link
-          class="menu__item"
-          to="/teachers"
-        >Teachers
-        </nuxt-link>
-
-      </li>
-      <li>
-        <nuxt-link
-          class="menu__item"
-          to="/price"
-        >Price
-        </nuxt-link>
-
-      </li>
-      <li>
-        <nuxt-link
-          class="menu__item"
-          to="/shedule"
-        >Shedule
-        </nuxt-link>
-
-      </li>
-      <li>
-        <nuxt-link
-          class="menu__item"
-          to="/contacts"
-        >Contacts
+        >{{ item }}
         </nuxt-link>
       </li>
     </ul>
     <div
       id="layer"
+      @click="clickCloser"
     />
   </div>
 </template>
 
 <script>
     export default {
-        name: "MenuBar"
+        name: "MenuBar",
+        data:()=>({
+            items:[
+                'About',
+                'Teachers',
+                'Price',
+                'Shedule',
+                'Contacts'
+            ]
+        }),
+        methods:{
+            clickCloser(){
+                this.$refs.closer.click()
+            }
+        }
     }
 </script>
 

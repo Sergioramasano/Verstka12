@@ -8,39 +8,14 @@
     />
     <nav>
       <ul>
-        <li>
+        <li
+          v-for="item in items"
+          :key="item">
           <nuxt-link
-            to="/about"
-          >About
+            :to="`/${item.toLowerCase()}`"
+            class="menu__item"
+          >{{ item }}
           </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link
-            to="/teachers"
-          >Teachers
-          </nuxt-link>
-
-        </li>
-        <li>
-          <nuxt-link
-            to="/price"
-          >Price
-          </nuxt-link>
-
-        </li>
-        <li>
-          <nuxt-link
-            to="/shedule"
-          >Shedule
-          </nuxt-link>
-
-        </li>
-        <li>
-          <nuxt-link
-            to="/contacts"
-          >Contacts
-          </nuxt-link>
-
         </li>
       </ul>
     </nav>
@@ -52,7 +27,16 @@
   import MenuBar from "./menu-bar";
   export default {
     name: "Navbar",
-      components: {MenuBar}
+      components: {MenuBar},
+      data:()=>({
+          items:[
+              'About',
+              'Teachers',
+              'Price',
+              'Shedule',
+              'Contacts'
+          ]
+      })
   }
 </script>
 
@@ -92,7 +76,7 @@
           display: block;
           cursor: pointer;
           display: block;
-          a {
+          .menu__item {
             display: block;
             text-decoration: none;
             font-family: Qwigley;

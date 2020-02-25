@@ -94,6 +94,10 @@
             height: auto;
             padding:10px 5px;
           }
+          &:hover{
+            background-color: lightblue;
+            transition: 1s ease;
+          }
         }
       }
     }
