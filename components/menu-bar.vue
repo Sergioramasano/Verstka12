@@ -80,6 +80,9 @@
     height: 26px;
     cursor: pointer;
     z-index: 1000;
+    @media screen and (min-width: 901px){
+      display: none;
+    }
   }
 
   /* добавляем "гамбургер" */
