@@ -44,12 +44,15 @@
         </li>
       </ul>
     </nav>
+    <menu-bar/>
   </header>
 </template>
 
 <script>
+  import MenuBar from "./menu-bar";
   export default {
-    name: "Navbar"
+    name: "Navbar",
+      components: {MenuBar}
   }
 </script>
 
@@ -65,6 +68,10 @@
       height: 3vh;
       background: url("../static/logo.svg") no-repeat;
       background-size: contain;
+      @media screen and (max-width: 900px){
+        width: 100px;
+        height: 50px;
+      }
       &:hover{
         transition: 1s ease;
         transform: rotateZ(10deg);
@@ -76,7 +83,6 @@
       display: flex;
       align-items: center;
       margin: auto;
-
       ul {
         width: 100%;
         display: flex;
@@ -102,7 +108,9 @@
           }
         }
       }
+      @media screen and (max-width: 900px){
+       display: none;
+      }
     }
   }
-
 </style>

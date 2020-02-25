@@ -43,8 +43,13 @@
 
     &--titlewrap {
       display: flex;
-
       .title {
+        span{
+          @media screen and (max-width: 900px){
+            font-size: 32px;
+            color: white;
+          }
+        }
         p {
           font-family: Qwigley;
           font-style: normal;
@@ -53,6 +58,12 @@
           line-height: 113.5%;
           text-transform: capitalize;
           color: #30545C;
+          @media screen and (max-width: 900px){
+            font-size: 18px;
+            width: 100px;
+            word-break: break-word;
+            color: white;
+          }
         }
       }
 
@@ -61,6 +72,9 @@
         flex-direction: column;
         justify-content: flex-end;
         margin: 0 0 2vw 7.4vw;
+        @media screen and (max-width: 900px){
+          display: none;
+        }
 
         p {
           font-family: 'Poppins';
@@ -91,11 +105,20 @@
       align-items: center;
       margin-top: 4.5vh;
       padding: 1.6vh 2vw;
+      @media screen and (max-width: 900px){
+        width: 300px;
+        height: auto;
+      }
 
       div {
         &:first-child {
           width: 5.625vw;
           height: 5.625vw;
+          @media screen and (max-width: 900px){
+            width: 80px;
+            height: 80px;
+            padding-right: 20px;
+          }
           img {
             width: 100%;
             height: 100%;
@@ -106,6 +129,9 @@
       .text{
         padding-left:1.25vw;
         width: 11.63vw;
+        @media screen and (max-width: 900px){
+          width: 60%;
+        }
         p{
           font-family: 'Poppins', sans-serif;
           font-style: normal;
@@ -114,6 +140,9 @@
           line-height: 113.5%;
           text-transform: capitalize;
           color: #9BC9D3;
+          @media screen and (max-width: 900px){
+            font-size: 14px;
+          }
           &:first-child{
             font-style: normal;
             font-weight: bold;

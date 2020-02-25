@@ -1,27 +1,27 @@
 <template>
   <section>
     <div class="card">
-      <div>
+      <button>
         <span>booking closed</span>
-      </div>
+      </button>
       <div>
         <p>Bali</p>
         <p>January, 22</p>
       </div>
     </div>
     <div class="card">
-      <div>
+      <button>
         <span>booking closed</span>
-      </div>
+      </button>
       <div>
         <p>Bali</p>
         <p>January, 22</p>
       </div>
     </div>
     <div class="card">
-      <div>
+      <button>
         <span>booking closed</span>
-      </div>
+      </button>
       <div>
         <p>Bali</p>
         <p>January, 22</p>
@@ -45,6 +45,14 @@
     justify-content: space-around;
     padding-left: 4.9vw;
     bottom: -10vh;
+    @media screen and (max-width: 900px){
+      bottom: -150px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    @media screen and (min-width:767px) and (max-width: 900px){
+      bottom: -250px;
+    }
     .card{
       width: 20.5vw;
       height: 19.17vh;
@@ -54,6 +62,12 @@
       flex-direction: column;
       justify-content: space-between;
       color: white;
+      @media screen and (max-width: 900px){
+        width: 250px;
+        height: 150px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
       &:first-child{
         background: url("/rect.svg") no-repeat;
       }
@@ -63,7 +77,7 @@
       &:last-child{
         background: url("/rect2.svg") no-repeat;
       }
-      div{
+      button{
         &:first-child{
           background: rgba(255, 255, 255, 0.74);
           backdrop-filter: blur(20px);
@@ -73,6 +87,13 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          outline: none;
+          border: none;
+          @media screen and (max-width: 900px){
+            width: 80%;
+            height: auto;
+            padding:10px 5px;
+          }
         }
       }
     }

@@ -36,6 +36,11 @@ a, button{
   position: relative;
   z-index: 0;
   box-sizing: border-box;
+  @media screen and (max-width: 900px){
+    padding-top: 0;
+    padding-left: 0;
+    overflow-y: auto;
+  }
   .serf {
     position: absolute;
     z-index: 1;
@@ -48,6 +53,9 @@ a, button{
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-name: slidein;
+    @media screen and (max-width: 900px){
+      height: 30%;
+    }
   }
   @keyframes slidein {
     0% {
@@ -73,6 +81,10 @@ a, button{
       height: 90%;
       width: 100%;
       border-radius: 5px;
+      @media screen and (max-width: 900px){
+        width: 100vw;
+        height: 100vh;
+      }
       .page {
         padding-left: 4.9vw;
         h1 {
@@ -91,6 +103,10 @@ a, button{
       animation-duration: 4s;
       animation-iteration-count: infinite;
       animation-name: serfy;
+      @media screen and (max-width: 900px){
+        animation: none;
+        background-position: 0 0;
+      }
     }
     @keyframes serfy {
       0% {
@@ -108,3 +124,4 @@ a, button{
     }
   }
 }
+
