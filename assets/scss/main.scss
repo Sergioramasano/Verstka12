@@ -21,6 +21,9 @@ html {
 ul {
   list-style: none;
 }
+a, button{
+  cursor: pointer;
+}
 .wrapper {
   background: url("../../static/bg.svg") no-repeat;
   overflow: hidden;
